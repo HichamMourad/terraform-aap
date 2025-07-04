@@ -43,7 +43,6 @@ resource "aws_network_interface" "this-nic" {
   security_groups = [aws_security_group.web-pub-sg.id]
 }
 resource "aws_eip" "ip-one" {
-  vpc                       = true
   network_interface         = aws_network_interface.this-nic.id
   depends_on                = [aws_instance.app-server]
 }
